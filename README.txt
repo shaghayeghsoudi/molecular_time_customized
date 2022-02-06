@@ -1,6 +1,6 @@
 
 
-IMPORTANT NOTE: The original "mol_time.R" script has been modified by Shaghayegh Soudi ("mol_time_cutomized.R") to adjust cases where the SNV clusteing does not match with the CNV segment to avoid the package stopp working. The changes have been annotated in mol_time_cutomized.R script.
+IMPORTANT NOTE: The original "mol_time.R" script has been modified by Shaghayegh Soudi ("mol_time_cutomized.R") to adjust cases where the SNV clusteing (based on SNV allel frequency) does not match with the CNV segment status to avoid the package stopp working. The changes have been annotated in mol_time_cutomized.R script.
 
 R function for calculating the timing of DNA aberration events from 
 NGS data.
