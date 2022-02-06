@@ -285,7 +285,7 @@ mol_time <- function(res.dir="",samples=NA,data.dir="data",grey.thresh=0.2,hclus
         ##### create a code specific for each gain in order to filter out all gains with less than 50 SNV
         cave_ascat$ascat_code<-paste(cave_ascat$chr,cave_ascat$start, cave_ascat$end,cave_ascat$class,sep="-") 
         alfa_sample<-as.data.frame(table(cave_ascat$ascat_code))
-        alfa_sample2<-alfa_sample[alfa_sample$Freq>=20,]
+        alfa_sample2<-alfa_sample[alfa_sample$Freq>=20,]           #### Shaghayegh: threshold can be changed (i.e., how many SNVs per CNV segment). Original was 50
         gain_mut<-as.character(alfa_sample2$Var1)
         cave_ascat_filt <- subset(cave_ascat, ascat_code %in% gain_mut)
         } else { mol_time_warn(warn,"no cave_ascat %s",sample_code)
