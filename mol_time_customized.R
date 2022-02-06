@@ -1,3 +1,7 @@
+
+### This is the customised and modified version of mol_time Rscript. Modification by Shaghayegh Soudi### 
+## sometimes the hclust SNV results do not match with CNV allelic status. This can result from bad purity estimations. The original script stops working when facing with such examples. I have modified the script to tale these problems in to accout so the package countinue working
+
 library(IRanges)
 
 library("GenomicRanges")
@@ -346,7 +350,7 @@ mol_time <- function(res.dir="",samples=NA,data.dir="data",grey.thresh=0.2,hclus
     
     # print( sprintf("for cluster sample: %s", sample_code) )
     # # print( sprintf("for number_clust: %i", length(number_clust)) )
-    if (unique(first_def$class) == "gain" & length(number_clust)<=3 ){   ### if by shaghayegh
+    if (unique(first_def$class) == "gain" & length(number_clust)<=3 ){              ### if statement added by shaghayegh until line 440 ###
       
         for(h in (1:length(number_clust))) {
            cluster<- first_def[first_def$code == number_clust[h],]
@@ -366,9 +370,9 @@ mol_time <- function(res.dir="",samples=NA,data.dir="data",grey.thresh=0.2,hclus
 
       mclust_mm[[i]]<-first_def
 
-     }## if by shaghayegh
+     }  ## if by shaghayegh
     
-     if (unique(first_def$class) == "gain_2" & length(number_clust)<=3 ){
+     if (unique(first_def$class) == "gain_2" & length(number_clust)<=3 ){           ### if statement added by shaghayegh
 
       for(h in (1:length(number_clust))) {
            cluster<- first_def[first_def$code == number_clust[h],]
@@ -390,7 +394,7 @@ mol_time <- function(res.dir="",samples=NA,data.dir="data",grey.thresh=0.2,hclus
 
      }
 
-    if (unique(first_def$class) == "gain_3" & length(number_clust)<=4 & length(number_clust)>3 ){
+    if (unique(first_def$class) == "gain_3" & length(number_clust)<=4 & length(number_clust)>3 ){     ### if statement added by shaghayegh
 
       for(h in (1:length(number_clust))) {
            cluster<- first_def[first_def$code == number_clust[h],]
@@ -435,14 +439,14 @@ mol_time <- function(res.dir="",samples=NA,data.dir="data",grey.thresh=0.2,hclus
 
       mclust_mm[[i]]<-first_def
 
-     }
+     } ### if statement added by shaghayegh
 
     }   # for i
 
 
 # merge results from all chromosomes  and create a data frame with all SNVs and clusters
 
-    if (length(mclust_mm)>0){   ### if by shaghayegh
+    if (length(mclust_mm)>0){                                                                ### if by shaghayegh
     mclust_mm_final<-     as.data.frame.matrix(do.call("rbind", mclust_mm), stringsAsFactors = F) 
     #write.table(mclust_mm_final,sprintf("%s_with_cluster.txt",sample_code), quote=F, sep="\t", row.names=F, col.names = T)
   
