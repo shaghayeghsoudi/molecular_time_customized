@@ -1,6 +1,6 @@
 
 
-IMPORTANT NOTE: The original "mol_time.R" script has been modified by Shaghayegh Soudi ("mol_time_cutomized.R") to adjust cases where the SNV clusteing (based on SNV allele frequency) does not match with the CNV segment status to avoid the package stop working in a module or pipeline. The changes have been annotated in mol_time_cutomized.R.
+IMPORTANT NOTE: The original "mol_time.R" script has been modified by Shaghayegh Soudi ("mol_time_cutomized.R") to adjust cases where the SNV clusteing (based on SNV allele frequency) does not match with the CNV segment status. I observed this problem can occur when the purity estimation is not good enough and some modifications have been included in the original package to avoid the package stop working in a module or pipeline. The changes have been annotated in mol_time_cutomized.R.
 Modified by Shaghayegh Soudi (March 2021)
 
 -------------------------------------------------------------------
